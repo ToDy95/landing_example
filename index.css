@@ -1,0 +1,266 @@
+@font-face {
+  font-family: Poppins;
+  src: url(./fonts/Poppins-Regular.ttf);
+}
+/* https://alvarotrigo.com/blog/hamburger-menu-css/ */
+/* hamburger menu de implementat pe mobile  */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+}
+
+.container {
+}
+.container .navBar {
+  height: 80px;
+  padding: 19px 146px;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.container .navBar .logoPart {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.container .navBar .logoPart .title {
+  color: #173a56;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 93.333% */
+}
+
+.container .navBar .buttons {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.container .navBar .buttons .links {
+  display: flex;
+  gap: 12px;
+}
+
+.container .navBar .buttons .links .link {
+  color: #22343d;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.container .navBar .buttons .links .link:hover {
+  color: #22343d;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 175% */
+  cursor: pointer;
+}
+.container .navBar .buttons .LogInOut {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.container .navBar .buttons .LogInOut .signIn {
+  width: 102px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 1px solid #bcd0e5;
+  color: #173a56;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .navBar .buttons .LogInOut .signOut {
+  width: 110px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #02897a;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .firstLine {
+  padding: 0 156px;
+  display: flex;
+  align-items: center;
+}
+.container .firstLine .left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 50%;
+}
+
+.container .firstLine .left .title {
+  color: #22343d;
+  font-family: Poppins;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px; /* 150% */
+}
+
+.container .firstLine .left .desc {
+  color: #22343d;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+}
+
+.container .firstLine .left .buttons {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.container .firstLine .left .buttons .btnStart {
+  width: 175px;
+  height: 53px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #02897a;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .firstLine .left .buttons .btnVideo {
+  color: #02897a;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+.container .firstLine .right {
+  width: 50%;
+}
+
+.container .firstLine .right img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+}
+
+@media (max-width: 768px) {
+  .container .navBar {
+    display: none;
+  }
+  .container .firstLine {
+    flex-direction: column-reverse;
+    padding: 0 24px !important;
+  }
+  .container .firstLine .left,
+  .container .firstLine .right {
+    width: 100%;
+  }
+  .container .firstLine .left {
+    text-align: center;
+  }
+}
+
+/* HAMBURGER exemplu */
+/*
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: 0.25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #eceff1;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.25s;
+}
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+.menu__item:hover {
+  background-color: #cfd8dc;
+} */
